@@ -1,6 +1,6 @@
 var URL = require('url'),
     util = require('util'),
-    jsmin = require('./jsmin'),
+    jsmin = require('jsmin'),
     events = require('events'),
     Buffer = require('buffer').Buffer,
     fs = require('fs'),
@@ -266,9 +266,14 @@ function Inliner(url, options, callback) {
         // but we're just being extra sure before we do zap it out  
         todo.scripts && assets.scripts.each(function () {
           var $script = window.$(this),
-              scriptURL = URL.resolve(url, this.src);
+              scriptURL;
+          if(this.src && url && typeof this.src === 'string')
+          {
+            scriptURL = URL.resolve(url, this.src);
+          }
 
-          if (!this.src || scriptURL.indexOf('google-analytics.com') !== -1) { // ignore google
+
+          if (!scriptURL || scriptURL.indexOf('google-analytics.com') !== -1) { // ignore google
             breakdown.scripts--;
             inliner.todo--;
             scriptsFinished();
