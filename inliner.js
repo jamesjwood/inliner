@@ -83,7 +83,7 @@ function Inliner(url, options, callback) {
       try { 
 
       jsdom.env(html, [
-        'http://code.jquery.com/jquery.min.js'
+        'http://localhost:8089/javascripts/jquery-1.10.min.js'
       ], function(errors, window) {
         // remove jQuery that was included with jsdom
         window.$('script:last').remove();
