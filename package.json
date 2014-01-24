@@ -1,7 +1,7 @@
 {
-  "name": "inliner",
+  "name": "tsuju-inliner",
   "version": "0.1.14",
-  "description": "Utility to inline images, CSS and JavaScript for a web page - useful for mobile sites",
+  "description": "Utility to inline images, CSS and JavaScript for a web page - useful for mobile sites - branched from remy sharp",
   "homepage": "http://github.com/remy/inliner",
   "main": "inliner",
   "keywords": [
@@ -12,7 +12,7 @@
     "minify"
   ],
   "author": {
-    "name": "Remy Sharp",
+    "name": "James Wood - branched from Remy Sharp",
     "web": "http://github.com/remy"
   },
   "dependencies": {
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/remy/inliner.git"
+    "url": "git://github.com/jamesjwood/inliner.git"
   },
   "bin": {
     "inliner": "bin/inliner"
